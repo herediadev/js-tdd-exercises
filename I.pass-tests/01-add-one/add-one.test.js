@@ -1,12 +1,18 @@
-var addOne = require("./add-one.js");
+const {addOne} = require("./add-one.js");
 
-test("Add 1 to each item in myArray", function() {
-  var myArray = [31, 57, 12, 5];
+describe("Given the addOne function",()=>{
+  it("it will add one to [31, 57, 12, 5] returning [32, 58, 13, 6] and keeping the original array", ()=> {
+    //arrange
+    const myArray = [31, 57, 12, 5];
+    const unchanged = [31, 57, 12, 5];
+    const expected = [32, 58, 13, 6];
 
-  var unchanged = [31, 57, 12, 5];
-  var expected = [32, 58, 13, 6];
-  var output = addOne(myArray);
+    //act
+    const output = addOne(myArray);
 
-  expect(output).toEqual(expected);
-  expect(myArray).toEqual(unchanged);
+    //assert
+    expect(output).toEqual(expected);
+    expect(myArray).toEqual(unchanged);
+  });
+
 });
