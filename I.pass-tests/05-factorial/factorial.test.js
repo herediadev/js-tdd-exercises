@@ -1,32 +1,66 @@
-var factorial = require("./factorial");
+const {factorial} = require("./factorial");
 
-describe("Factorial", function() {
-  test("Factorial", function() {
-    var in1 = 5;
-    var exp1 = 120;
+describe("Factorial function", () => {
+  it("For the int 5 it will return 120", () => {
+    //arrange
+    const int = 5;
+    const expected = 120;
 
-    var in2 = 9;
-    var exp2 = 362880;
+    //act
+    const output = factorial(int);
 
-    var in3 = 1;
-    var exp3 = 1;
+    //assert
+    expect(output).toBe(expected);
 
-    var in4 = 0;
-    var exp4 = 1;
+  });
 
-    var in5 = 3;
-    var exp5 = 6;
+  it("For the int 9 it will return 362880", () => {
+    //arrange
+    const int = 9;
+    const expected = 362880;
 
-    var out1 = factorial(in1);
-    var out2 = factorial(in2);
-    var out3 = factorial(in3);
-    var out4 = factorial(in4);
-    var out5 = factorial(in5);
+    //act
+    const output = factorial(int);
 
-    expect(out1).toEqual(exp1);
-    expect(out2).toEqual(exp2);
-    expect(out3).toEqual(exp3);
-    expect(out4).toEqual(exp4);
-    expect(out5).toEqual(exp5);
+    //assert
+    expect(output).toEqual(expected);
+
+  });
+
+    
+  it("For the int 1 it will return 1 ", () => {
+    //arrange
+    const int = 1;
+    const expected = 1;
+
+    //act
+    const output = factorial(int);
+
+    //assert
+    expect(output).toEqual(expected);
+  });
+
+  it("For the int 0 it will return 1", () => {
+    //arrange
+    const int = 0;
+    const expected = 1;
+
+    //act
+    const output = factorial(int);
+
+    //assert
+    expect(output).toEqual(expected);
+  });
+
+  it("For the int 3 it will return 6", () => {
+    //arrange
+    const int = 3;
+    const expected = 6;
+    
+    //act
+    const output = factorial(int);
+    
+    //assert
+    expect(output).toEqual(expected);
   });
 });

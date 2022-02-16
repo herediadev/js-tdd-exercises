@@ -7,7 +7,20 @@
 
 // calculate and return the factorial of int
 // note: factorial of 0 is 1
+const createArray = (int) => {
+    return [...Array(int).keys()].map(item => item + 1)
+}
+const factorial = (int) => {
+    if(int === 0){
+        return 1;
+    }
+    const targetArray = createArray(int);
+   
+    return targetArray.reduce((a, b) => { 
+        return a * b;
+    });
+}
 
-function factorial(int) {}
-
-module.exports = factorial;
+module.exports = {
+    factorial
+};

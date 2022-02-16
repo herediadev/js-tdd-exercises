@@ -1,4 +1,7 @@
 const addAllNumbers = (numbers) =>{
+    if (!Array.isArray(numbers)) {
+        throw new Error("Error");
+    }
     //El método reduce ejecuta callback una vez por cada elemento presente en el array
     //El valor devuelto de la función reductora se asigna al acumulador
     //cuyo valor se recuerda en cada iteración de la matriz y, en última instancia, 
