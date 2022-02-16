@@ -1,5 +1,4 @@
 const getWordLengths = (someWords) => {
-
     if (!Array.isArray(someWords)) {
         throw new Error("Error");
     }
