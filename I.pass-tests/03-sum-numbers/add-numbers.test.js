@@ -1,4 +1,4 @@
-const {addAllNumbers} = require("./add-numbers");
+const {addNumbers} = require("./add-numbers");
 
 describe("addAllNumbers function. Add all numbers", () => {
   it("for the array [9, 23, 10, 3, 8] it will return 53", () => {
@@ -7,7 +7,7 @@ describe("addAllNumbers function. Add all numbers", () => {
     const expected = 53;
 
     //act
-    const output = addAllNumbers(numbers);
+    const output = addNumbers(numbers);
 
     //assert
     expect(output).toEqual(expected);
@@ -18,12 +18,12 @@ describe("addAllNumbers function. Add all numbers", () => {
     const numbers = 4;
       
     //act and assert
-    expect(() => addAllNumbers()).toThrow("Error");
+    expect(() => addNumbers()).toThrow("Error");
     
   });
 
   it("If the function does not receive parameters, it will throw an error.", () => {
     //act and assert
-    expect(() => addAllNumbers()).toThrow("Error");
+    expect(() => addNumbers()).toThrow("Error");
 });
 });

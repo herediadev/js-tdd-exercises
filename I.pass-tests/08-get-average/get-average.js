@@ -14,7 +14,7 @@ const average = (numbers) => {
         }
     });
 
-    const sum = numArray.reduce((previous, current) => current += previous);
+    const sum = numArray.reduce((a, b) => a + b);
     return sum / numArray.length;
 
 }
