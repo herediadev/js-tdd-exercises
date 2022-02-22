@@ -1,9 +1,9 @@
-const removeVowelsForWords = (words) => {
-  let result = [];
-  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+const {removeVowels} = require("../02-remove-vowels/remove-vowels");
 
+const removeVowelsForWords = (words) => {
+  
   const result = words.map((word) => {
-    return removeVowelsForWords(word);
+    return removeVowels(word);
   });
 
   return result;
