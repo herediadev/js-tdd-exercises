@@ -4,4 +4,6 @@ function getEven(numbers) {
   });
 }
 
-module.exports = getEven;
+module.exports = {
+  getEven
+};
