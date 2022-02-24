@@ -1,11 +1,12 @@
-const fetcher = require("./fetcher");
+const {fetcher} = require("./fetcher");
 
-const getRepos = function(repoName) {
-  return fetcher(repoName).then(function(response) {
-    return response.map(function(rep) {
+const getRepos = (repoName) => {
+  return fetcher(repoName).then(response => {
+    return response.map(rep => {
       return rep.name;
     });
   });
 };
 
-module.exports = getRepos;
+module.exports = {
+  getRepos};
