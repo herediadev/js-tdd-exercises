@@ -1,9 +1,9 @@
 const getSecondThird = (array) => {
-  const newArray = array.slice();
-  newArray.sort((x, y) => {
+  //const newArray = array.slice();
+  array.sort((x, y) => {
     return x - y;
   });
-  return [newArray[1], newArray[2]];
+  return [array[1], array[2]];
 };
 
 module.exports = {

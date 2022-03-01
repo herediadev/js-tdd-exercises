@@ -1,5 +1,4 @@
 const {paintShop} = require("./paint-cars");
-
 describe("Paint shop", () => {
   it("Paint shop", () => {
     const cars = [
@@ -22,7 +21,6 @@ describe("Paint shop", () => {
       { make: "Toyota", model: "Prius", colour: "Silver" },
       { make: "Honda", model: "Civic", colour: "Yellow" }
     ];
-
 
     const output = paintShop(cars, "Pink");
 

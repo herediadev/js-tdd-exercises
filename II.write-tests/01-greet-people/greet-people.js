@@ -1,15 +1,12 @@
 const greetPeople = (people) => {
  /* let greeting = "Hello ";
- 
   people.forEach((person) => {
     greeting = greeting + person;
   });
-
   return greeting;*/
 
-return people.reduce((acumulador, person) => acumulador + person, "Hello ");
-
-
+  const greeting = "Hello ";
+    return people.map(person => greeting + person);
 }
 
 module.exports = {

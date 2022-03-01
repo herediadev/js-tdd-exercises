@@ -1,7 +1,7 @@
 const {formatCities} = require("./cities");
 
 describe("Cities function", () => {
-  it("For the capital [] it will return ", () => {
+  it("For the capital [] it will return 'Paris is the capital of France'", () => {
     const capitals = [
       { city: "Paris", country: "France" },
       { city: "Madrid", country: "Spain" },
