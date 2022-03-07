@@ -1,11 +1,28 @@
-const {fizzbuzz} = require("./fizz-buzz");
+const { fizzbuzz } = require("./fizz-buzz");
 
-test("prints 1", function() {
-  var result = fizzbuzz(1);
-  expect(result).toEqual("1");
-});
+describe("prints 1", () => {
+  it("prints 1", () => {
+    //Arrange
+    const number = 1;
+    const expected = "1";
 
-test("prints 1,2", function() {
-  var result = fizzbuzz(2);
-  expect(result).toEqual("1, 2");
+
+    //Act
+    const result = fizzbuzz(number);
+
+    //Assert
+    expect(result).toEqual(expected);
+  });
+
+  it("prints 1,2", () => {
+    //Arrange
+    const number = 2;
+    const expected = "1, 2";
+
+    //Act
+    const result = fizzbuzz(number);
+
+    //Assert
+    expect(result).toEqual(expected);
+  });
 });

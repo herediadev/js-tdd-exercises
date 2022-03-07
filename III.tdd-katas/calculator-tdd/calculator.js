@@ -13,7 +13,7 @@ const calculator = (numbers) => {
         if(Number(number) < 0){
             throw new Error("negatives not allowed: " + number);
         }
-        return Number(acumulador) + Number(number)
+        return acumulador + Number(number)
     }, 0)
      
 }
