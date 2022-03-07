@@ -1,4 +1,4 @@
-var fizzbuzz = require("./fizz-buzz");
+const {fizzbuzz} = require("./fizz-buzz");
 
 test("prints 1", function() {
   var result = fizzbuzz(1);
