@@ -6,7 +6,6 @@ describe("Fizzbuzz function", () => {
     const number = 1;
     const expected = "1";
 
-
     //Act
     const result = fizzbuzz(number);
 

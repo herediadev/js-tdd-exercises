@@ -7,8 +7,7 @@ const fizzbuzz = (number) => {
     const arrayOrder = arr.sort((a, b) => {
         return a - b
     })
-    console.log(arrayOrder)
-    
+  
     const arrayNumbers = arrayOrder.map(number => {
         if(number % 3 === 0 && number % 5 === 0){
             return "FizzBuzz"
@@ -20,10 +19,8 @@ const fizzbuzz = (number) => {
             return number
         }
     })
-    console.log(arrayNumbers)
 
     return arrayNumbers.join(', ');
-
 }
 
 module.exports = {
