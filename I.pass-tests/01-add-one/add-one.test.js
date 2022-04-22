@@ -23,19 +23,7 @@ describe("Given the addOne function", () => {
       undefined,
       NaN,
     ];
-    const unchangedArray = [
-      1,
-      2,
-      "3",
-      "pepe",
-      {},
-      [],
-      true,
-      false,
-      null,
-      undefined,
-      NaN,
-    ];
+
     const expected = [2, 3];
 
     const output = addOne(testArray);
@@ -43,7 +31,6 @@ describe("Given the addOne function", () => {
 
     expect(output).toEqual(expected);
     expect(output2).toEqual([]);
-    expect(testArray).toEqual(unchangedArray);
   });
 
   it("For the input [1,2,3] should return [2,3,4] and keeping the original input", () => {
