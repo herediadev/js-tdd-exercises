@@ -1,28 +1,28 @@
-var paintShop = require("./paint-cars");
+const paintShop = require("./paint-cars");
 
-test("Paint shop", function() {
-  var cars = [
+test("Paint shop", () => {
+  const cars = [
     { make: "Ford", model: "Fiesta", colour: "Red" },
     { make: "Land Rover", model: "Defender", colour: "Muddy" },
     { make: "Toyota", model: "Prius", colour: "Silver" },
-    { make: "Honda", model: "Civic", colour: "Yellow" }
+    { make: "Honda", model: "Civic", colour: "Yellow" },
   ];
 
-  var unpaintedCars = [
+  const unpaintedCars = [
     { make: "Ford", model: "Fiesta", colour: "Red" },
     { make: "Land Rover", model: "Defender", colour: "Muddy" },
     { make: "Toyota", model: "Prius", colour: "Silver" },
-    { make: "Honda", model: "Civic", colour: "Yellow" }
+    { make: "Honda", model: "Civic", colour: "Yellow" },
   ];
 
-  var repaintedCars = [
+  const repaintedCars = [
     { make: "Ford", model: "Fiesta", colour: "Pink" },
     { make: "Land Rover", model: "Defender", colour: "Muddy" },
     { make: "Toyota", model: "Prius", colour: "Silver" },
-    { make: "Honda", model: "Civic", colour: "Yellow" }
+    { make: "Honda", model: "Civic", colour: "Yellow" },
   ];
 
-  var output = paintShop(cars, "Pink");
+  const output = paintShop(cars, "Pink");
 
   expect(output).toEqual(repaintedCars);
   expect(cars).toEqual(unpaintedCars);

@@ -1,16 +1,16 @@
-var removeVowels = require("../02-remove-vowels/remove-vowels");
+const { removeVowels } = require("../02-remove-vowels/remove-vowels");
 
-function removeVowelsForWords(words) {
-  var result = words.map(function(word) {
-    return removeVowels(word);
+const removeVowelsForWords = (words) => {
+  if (!Array.isArray(words) || words.length === 0)
+    return "Not exist a array or empty array";
+
+  const result = [];
+  
+  words.forEach((word) => {
+    if (typeof word === "string")
+      result.push(removeVowels(word).replace(/_/g, "").toLowerCase());
   });
 
   return result;
-}
-
+};
 module.exports = removeVowelsForWords;
-
-/*
-    input: ["Irina", "Etza", "Daniel"]
-    expected output: ["rn", "tz", "Dnl"]
-*/

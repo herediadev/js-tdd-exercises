@@ -1,31 +1,8 @@
-function removeVowels(word) {
-  var characters = word.split("");
+const removeVowels = (word) => {
+  if (typeof word !== "string") return "Not a string";
+  if (word.length === 0) return "Empty string";
 
-  var result = [];
-
-  characters.forEach(function(character) {
-    if (
-      character === "a" ||
-      character === "o" ||
-      character === "i" ||
-      character === "e" ||
-      character === "u"
-    ) {
-      result.push(character);
-    } else {
-      result.push("_");
-    }
-  });
-
-  return result.join("");
-}
-
-module.exports = removeVowels;
-
-/*
-  Let's trace this piece of code - what is the value of result with this input
-
-  var result = removeVowels('samuel');
-
-  what is the value of result?
-*/
+  const normalizedWord = word.toLowerCase().replace(/[^a-z]/g, "");
+  return normalizedWord.replace(/[aeiou]/g, "_");
+};
+module.exports = { removeVowels };

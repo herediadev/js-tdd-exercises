@@ -1,18 +1,11 @@
-function greetPeople(people) {
-  var greeting = "Hello ";
+const greetPeople = (people) => {
+  if (!Array.isArray(people)) return "Invalid input";
+  if (people.length === 0) return "Invalid input";
 
-  people.forEach(function(person) {
-    greeting = greeting + person;
-  });
+  const validWords = people.filter((word) => typeof word === "string");
+  if (validWords.length === 0) return "Invalid input";
 
-  return greeting;
-}
+  return validWords.map((word) => `Hello ${word}`);
+};
 
-module.exports = greetPeople;
-
-/*
-  Let's trace this piece of code - what is the value of result with this input
-
-  var mentors = ['Irina', 'Ashleigh', 'Etza'];
-  var result = greetPeople(mentors)
-*/
+module.exports = { greetPeople };
