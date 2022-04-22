@@ -1,10 +1,27 @@
-var average = require("./get-average");
+const { getAverage } = require("./get-average");
 
-test("Average", function() {
-  var numbers = [4, "-", 8, 11, "hello", "57", 0, 2];
-  var expected = 5;
+describe("Average", () => {
+  it("should return average", () => {
+    const numbers = [4, 6, 8, 10];
+    const unchangedNumbers = [4, 6, 8, 10];
+    const expected = 7;
 
-  var output = average(numbers);
+    const output = getAverage(numbers);
 
-  expect(output).toEqual(expected);
+    expect(output).toEqual(expected);
+    expect(numbers).toEqual(unchangedNumbers);
+  });
+
+  it("return only numbers", () => {
+    const numbers = [4, 6, 8, 10, "a", "b", "c", {}, []];
+    const unchangedNumbers = [4, 6, 8, 10, "a", "b", "c", {}, []];
+    const expected = 7;
+
+    const output = getAverage(numbers);
+
+    expect(output).toEqual(expected);
+    expect(numbers).toEqual(unchangedNumbers);
+  });
+
+  // it should return 0 if there are no numbers
 });
