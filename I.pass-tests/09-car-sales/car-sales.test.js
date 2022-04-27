@@ -1,6 +1,14 @@
 const { sales } = require("./car-sales");
 
 describe("sales", () => {
+  it("should return 0 if no cars are sold", () => {
+    const carsSold = [];
+
+    const output = sales(carsSold);
+
+    expect(output).toEqual("No solds yet");
+  });
+
   it("should return an object with the total sales for each make", () => {
     const carsSold = [
       { make: "Ford", model: "Fiesta", colour: "Red", price: 5999 },
@@ -20,7 +28,7 @@ describe("sales", () => {
       { make: "Ford", model: "Fiesta", colour: "Red", price: 15000 },
       { make: "Land Rover", model: "Discovery", colour: "Blue", price: 9000 },
       { make: "Ford", model: "Fiesta", colour: "Green", price: 2000 },
-    ]
+    ];
 
     const totals = {
       Ford: 22999,
@@ -34,14 +42,5 @@ describe("sales", () => {
     expect(output).toEqual(totals);
     expect(carsSold).toEqual(unchangedCars);
   });
-
-  it("should return 0 if no cars are sold", () => {
-    const carsSold = [];
-
-    const output = sales(carsSold);
-
-    expect(output).toEqual('No solds yet');
-  });
-
-  // IT valid elements
+  // TODO: valid elements
 });

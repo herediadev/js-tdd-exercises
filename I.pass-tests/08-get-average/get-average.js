@@ -4,10 +4,10 @@
 
 const getAverage = (numbers) => {
   const numbersOnly = numbers.filter((number) => typeof number === "number");
-  const sum = numbersOnly.reduce((acc, number) => acc + number, 0);
+  const sumOfNumbers = numbersOnly.reduce((acc, number) => acc + number, 0);
 
   // AVERAGE
-  return sum / numbersOnly.length;
+  return sumOfNumbers / numbersOnly.length;
 };
 
 module.exports = { getAverage };

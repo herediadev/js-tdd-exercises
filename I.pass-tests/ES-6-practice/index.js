@@ -14,6 +14,7 @@ const arrow = () => "es6 is awesome!";
 function defaultParameter(name = "sam") {
   return name;
 }
+// IT valid elements
 
 // Use the spread operator to combine arr1 and arr2
 // function combineArrays(arr1, arr2) {

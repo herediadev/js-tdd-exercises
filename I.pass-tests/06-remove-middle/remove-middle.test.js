@@ -16,20 +16,7 @@ describe("Remove the middle word in a array", () => {
       "c",
       NaN,
     ];
-    const unchangedWords = [
-      {},
-      [],
-      true,
-      false,
-      null,
-      undefined,
-      1,
-      1.5,
-      "a",
-      "b",
-      "c",
-      NaN,
-    ];
+    
     const expectedOutput = "b";
 
     const output = removeMiddle(words);
@@ -49,7 +36,6 @@ describe("Remove the middle word in a array", () => {
     expect(output6).toEqual("");
     expect(output7).toEqual("");
     expect(output8).toEqual("");
-    expect(words).toEqual(unchangedWords);
   });
 
   it("should remove the middle word regardless of capital letters or spaces", () => {

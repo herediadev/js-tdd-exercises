@@ -5,7 +5,7 @@ describe("Show me the length of words", () => {
     const testArray = "pepe";
 
     const output = () => getWordLengths(testArray);
-    const output2 = () => getWordLengths('');
+    const output2 = () => getWordLengths("");
 
     expect(output).toThrowError("Its not a array");
     expect(output2).toThrowError("Its not a array");
@@ -19,7 +19,6 @@ describe("Show me the length of words", () => {
     const output = getWordLengths(words);
     const output2 = getWordLengths([]);
     const output3 = getWordLengths([NaN, NaN]);
- 
 
     expect(output).toEqual(expected);
     expect(output2).toEqual([]);
