@@ -1,7 +1,8 @@
 const { removeMiddle } = require("./remove-middle");
 
-describe("Remove the middle word in a array", () => {
-  it("Verify if elements are valids and ignore others, if dont have elements valids the default value is a empty string", () => {
+describe("La funcion retorna la palabra de enmedio de un array", () => {
+  // todo:
+  it("Dado un array , if dont have elements valids the default value is a empty string", () => {
     const words = [
       {},
       [],

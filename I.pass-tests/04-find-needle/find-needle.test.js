@@ -1,26 +1,41 @@
 const { findWord } = require("./find-needle");
 
-describe("Will be search a word in array", () => {
-  it("Parse and normalize words and search word for example match 'NEEDLE'  with 'NeEDL E'.", () => {
+describe("The findWord function is used to find a string in an array of strings.", () => {
+  it("Given an array of strings we must normalize both parameters before performing the search, so for this function the word 'NeEDL E' is not different from 'N EEDLE' and match it correctly", () => {
+    // Arrange
     const words = [
-      "hay",
-      "junk",
-      "haystack",
-      "NEEDLE",
-      "moreJunk",
+      "h ay",
+      "juNk",
+      "ha  ystack",
+      "N EEDLE",
+      "mOre Junk",
       "randomJunk",
     ];
     const searchWord = "NeEDL E";
     const expected = 3;
 
+    // Act
     const output = findWord(words, searchWord);
 
+    // Assert
     expect(output).toEqual(expected);
   });
 
-  // test for repeat words
+  it("Given a string of words we must do a reduction of all the repeated terms.", () => {
+    // Arrange
+    const words = ["hay", "Ha y", "HAY"];
+    const searchWord = "hay";
+    const expected = 0;
 
-  it("In a array of words encounter 'needle' and dont modify original array.", () => {
+    // Act
+    const output = findWord(words, searchWord);
+
+    // Assert
+    expect(output).toEqual(expected);
+  });
+
+  it("Given an array of words find the word 'needle' in it and leave the original array unchanged.", () => {
+    // Arrange
     const words = [
       "hay",
       "junk",
@@ -37,12 +52,13 @@ describe("Will be search a word in array", () => {
       "moreJunk",
       "randomJunk",
     ];
-
     const searchWord = "needle";
     const expected = 3;
 
+    // Act
     const output = findWord(words, searchWord);
 
+    // Assert
     expect(output).toEqual(expected);
     expect(words).toEqual(unchangedWords);
   });

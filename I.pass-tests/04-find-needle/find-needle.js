@@ -1,10 +1,13 @@
 const findWord = (words, searchWord) => {
   if (words.length === 0) return;
-  const cleanSearchWord = searchWord.replace(/[^a-z]/gi, "").toLowerCase();
-  const cleanWords = words.map((word) =>
+  if (typeof searchWord !== "string") return;
+
+  const parseSearchWord = searchWord.replace(/[^a-z]/gi, "").toLowerCase();
+  const parseWords = words.map((word) =>
     word.replace(/[^a-z]/gi, "").toLowerCase()
   );
-  return cleanWords.indexOf(cleanSearchWord);
+  const withoutDuplicates = [...new Set(parseWords)];
+  return withoutDuplicates.findIndex((word) => word === parseSearchWord);
 };
 
 module.exports = { findWord };

@@ -1,5 +1,6 @@
 const getWordLengths = (arrayOfWords) => {
-  if (!Array.isArray(arrayOfWords)) throw new Error("Its not a array");
+  if (!Array.isArray(arrayOfWords))
+    throw new Error("I need an array to works :(");
 
   const result = [];
 

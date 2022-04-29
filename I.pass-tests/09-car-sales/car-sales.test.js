@@ -1,15 +1,21 @@
 const { sales } = require("./car-sales");
 
-describe("sales", () => {
-  it("should return 0 if no cars are sold", () => {
+describe("The sales function helps us calculate the total profit of a brand, it receives an array of objects that contain characteristics such as price, color and model.", () => {
+  // TODO: valid elements
+
+  it("Given an empty array we must return the message 'No sales yet' as feedback on the current situation.", () => {
+    // Arrange
     const carsSold = [];
 
+    // Act
     const output = sales(carsSold);
 
+    // Assert
     expect(output).toEqual("No solds yet");
   });
 
-  it("should return an object with the total sales for each make", () => {
+  it("Given an array with the sales, we must return an object with the brand as the key and the sum of the prices as the value.", () => {
+    // Arrange
     const carsSold = [
       { make: "Ford", model: "Fiesta", colour: "Red", price: 5999 },
       { make: "Land Rover", model: "Defender", colour: "Muddy", price: 12000 },
@@ -37,10 +43,11 @@ describe("sales", () => {
       Toyota: 6500,
     };
 
+    // Act
     const output = sales(carsSold);
 
+    // Assert
     expect(output).toEqual(totals);
     expect(carsSold).toEqual(unchangedCars);
   });
-  // TODO: valid elements
 });

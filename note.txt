@@ -1,0 +1,3 @@
+Dado que soy un usuario valido
+Cuando ingreo a la aplicacion
+Entonces puedo ver mis productoss
