@@ -1,7 +1,8 @@
 const { sales } = require("./car-sales");
 
 describe("The sales function helps us calculate the total profit of a brand, it receives an array of objects that contain characteristics such as price, color and model.", () => {
-  // TODO: valid elements
+  // it("Debe de comprobar las entradas validas")
+  // it("Comprobar la Salida")
 
   it("Given an empty array we must return the message 'No sales yet' as feedback on the current situation.", () => {
     // Arrange
@@ -14,7 +15,7 @@ describe("The sales function helps us calculate the total profit of a brand, it 
     expect(output).toEqual("No solds yet");
   });
 
-  it("Given an array with the sales, we must return an object with the brand as the key and the sum of the prices as the value.", () => {
+  it("Given an array with the sales, we must return an object with the brand as the key and the sum of the prices as the value and dont modify the original entry.", () => {
     // Arrange
     const carsSold = [
       { make: "Ford", model: "Fiesta", colour: "Red", price: 5999 },

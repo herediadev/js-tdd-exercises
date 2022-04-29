@@ -1,4 +1,4 @@
-const sumNumbers = (numbers) => {
+const sumNumbers = (numbers) => { 
   const DEFAULT_RESULT = 0;
 
   return numbers.reduce((acc, curr) => {

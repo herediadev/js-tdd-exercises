@@ -3,11 +3,16 @@
 // be sure to exclude the strings
 
 const getAverage = (numbers) => {
-  const numbersOnly = numbers.filter((number) => typeof number === "number");
-  const sumOfNumbers = numbersOnly.reduce((acc, number) => acc + number, 0);
+  // first validation of input for dont forget time if the input is empty or invalid
+  if (numbers.length === 0) return "Invalid or empty entry.";
+  
+  const returnNumbersOnly = numbers.filter((number) => typeof number === "number");
 
-  // AVERAGE
-  return sumOfNumbers / numbersOnly.length;
+  // Segunda validacion, para comprobar si despues del filtro existen numeros en el array
+  if (returnNumbersOnly.length === 0) return "Invalid or empty entry.";
+
+  const sumOfNumbers = returnNumbersOnly.reduce((acc, number) => acc + number, 0);
+  return sumOfNumbers / returnNumbersOnly.length;
 };
 
 module.exports = { getAverage };

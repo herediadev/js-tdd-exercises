@@ -1,6 +1,6 @@
 const secondLargest = (numbers) => {
-  if (!Array.isArray(numbers)) return "Invalid Input";
-  if (numbers.length === 0) return "Empty Input";
+  if (!Array.isArray(numbers)) return "Invalid input.";
+  if (numbers.length === 0) return "Empty Input.";
 
   const validNumbers = numbers.filter(
     (n) => typeof n === "number" && !Number.isNaN(n)

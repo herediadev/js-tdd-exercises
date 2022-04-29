@@ -4,6 +4,7 @@ const sales = (carsSold) => {
   if (carsSold.length === 0) return('No solds yet');
   
   carsSold.forEach((car) => {
+    // TODO: Comprobate valid values
     if (car.make in totals) {
       totals[car.make] += car.price;
     } else {

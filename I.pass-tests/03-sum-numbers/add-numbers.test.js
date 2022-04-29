@@ -1,6 +1,7 @@
 const { sumNumbers } = require("./add-numbers");
 
 describe("The sumNumbers function receives an array of numbers and returns the sum of all of them.", () => {
+  // Verify undefined null etc
   it("Verify if is posible add this type of data or ignorated, default result if entry empty is 0.", () => {
     const numbers = [1, 2, "3", undefined, null, true, false, {}, [], 4, NaN];
     const unchanged = [1, 2, "3", undefined, null, true, false, {}, [], 4, NaN];
@@ -8,10 +9,12 @@ describe("The sumNumbers function receives an array of numbers and returns the s
 
     const output = sumNumbers(numbers);
 
-    expect(output).toEqual(expected);
-    expect(numbers).toEqual(unchanged);
+    // se puede hacer esto?
     expect(sumNumbers([])).toEqual(0);
     expect(sumNumbers([NaN, NaN])).toEqual(0);
+
+    expect(output).toEqual(expected);
+    expect(numbers).toEqual(unchanged);
   });
 
   it("For the input [1,2,3,4,5] should be return 15 (result sum of all terms), and keeping original array.", () => {

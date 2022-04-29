@@ -1,7 +1,7 @@
 const { getWordLengths } = require("./get-word-lengths");
 
 describe("Function getWordLenghts receives an array of words and returns an array of numbers representing the length of each word.", () => {
-  it("Given invalid input, it should throw an error with the message 'I need an array to work :('.", () => {
+  it("Given invalid input it should throw an error with the message 'I need an array to work :('.", () => {
     const testArray1 = false;
     const testArray2 = 2;
     const testArray3 = true;

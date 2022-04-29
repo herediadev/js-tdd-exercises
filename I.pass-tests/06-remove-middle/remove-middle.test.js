@@ -1,8 +1,18 @@
 const { removeMiddle } = require("./remove-middle");
 
-describe("La funcion retorna la palabra de enmedio de un array", () => {
-  // todo:
-  it("Dado un array , if dont have elements valids the default value is a empty string", () => {
+describe("Given an array of words, this function returns the string in the middle.", () => {
+  // todo: Comprobar valores undefined, null, etc
+  // todo: Comprobar si el array es mayor o igual a 3
+  it("Given an pair array or less than 3, if is should it return the message 'Can't tell the middle word of this array'.", () => {
+    const wordsPair = ["a", "b", "c", "d"];
+
+    expect(removeMiddle(wordsPair)).toBe(
+      "Can't tell the middle word of this array"
+    );
+  });
+
+  it("Given an array containing invalid words and values, you must work with the possible words, and if they don't exist, you must return the message 'Can't tell from the middle word of this array'.", () => {
+    // Arrange
     const words = [
       {},
       [],
@@ -17,31 +27,22 @@ describe("La funcion retorna la palabra de enmedio de un array", () => {
       "c",
       NaN,
     ];
-    
-    const expectedOutput = "b";
 
+    // Act
+    const expected = "b";
     const output = removeMiddle(words);
-    const output2 = removeMiddle([]);
-    const output3 = removeMiddle(undefined);
-    const output4 = removeMiddle(null);
-    const output5 = removeMiddle(NaN);
-    const output6 = removeMiddle(1);
-    const output7 = removeMiddle(1.5);
-    const output8 = removeMiddle("a");
 
-    expect(output).toEqual(expectedOutput);
-    expect(output2).toEqual("");
-    expect(output3).toEqual("");
-    expect(output4).toEqual("");
-    expect(output5).toEqual("");
-    expect(output6).toEqual("");
-    expect(output7).toEqual("");
-    expect(output8).toEqual("");
+    // Assert
+    expect(output).toEqual(expected);
+    expect(removeMiddle([])).toEqual(
+      "Can't tell the middle word of this array"
+    );
   });
 
-  it("should remove the middle word regardless of capital letters or spaces", () => {
-    const words = ["mouse", "giraffe", "Queen", "window", "bottle"];
-    const unchangedWords = ["mouse", "giraffe", "Queen", "window", "bottle"];
+  // Se me hace que el uso de esta funcionalidad depende bastante del contexto.
+  it("should remove the middle word regardless of capital letters or spaces and dont modify original entry.", () => {
+    const words = ["mouse", "giraffe", "Qu eE n", "window", "bottle"];
+    const unchangedWords = ["mouse", "giraffe", "Qu eE n", "window", "bottle"];
     const expectedOutput = "queen";
 
     const output = removeMiddle(words);
