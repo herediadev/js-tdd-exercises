@@ -7,13 +7,16 @@ const mock = new MockAdapter(axios);
 
 describe("repoNames", () => {
   it("should return an array of repo names", async () => {
+    // Arrange
     mock
       .onGet("https://api.github.com/users/kabaros/repos")
       // posible arguments for reply are (status, data, headers)
       .reply(200, [{ name: "postname-1" }, { name: "postname-2" }]);
 
+          // Act
     const repos = await repoNames("https://api.github.com/users/kabaros/repos");
 
+    // Assert
     expect(repos).toEqual(["postname-1", "postname-2"]);
   });
 

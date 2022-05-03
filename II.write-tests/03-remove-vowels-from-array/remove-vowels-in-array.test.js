@@ -3,7 +3,7 @@ const removeVowelsForWords = require("./remove-vowels-in-array");
 describe("Remove vowels of words in a array", () => {
   it("empty array return a mesage", () => {
     const words = [];
-    const expected = "Not exist a array or empty array";
+    const expected = "Not exist a array or array is empty";
 
     const output = removeVowelsForWords(words);
 
