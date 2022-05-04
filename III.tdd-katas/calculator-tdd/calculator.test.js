@@ -1,11 +1,29 @@
-const { calculator } = require('./calculator.js')
+const { Add } = require('./calculator');
 
-describe('add numbers', () => {
-	test('if empty string return 0', () => {
-		expect(calculator('')).toBe(0);
-	});
+describe('calculator', () => {
+  it('part1', () => {
+	expect(Add('0')).toBe(0);
+	expect(Add('1')).toBe(1);
+	expect(Add('1,2')).toBe(3);
+  });
 
-	test('For 2 + 2 should be return 4', () => {
-		expect(calculator(2,2)).toEqual(4)
-	})
+  it('part2', () => {
+	expect(Add('1,2,3')).toBe(6);
+	expect(Add('1,2,3,4')).toBe(10);
+	expect(Add('1,2,3,4,5')).toBe(15);
+  })
+
+  it('part3', () => {
+	expect(Add('1\n2,3')).toBe(6);
+	expect(Add('1\n2\n3\n4,5')).toBe(15);
+  })
+
+  it('test of delimitiers', () => {
+	expect(Add("//;\n1;2", ';')).toBe(3);
+  })
+
+  it('test of negative numbers', () => {
+	expect(Add('-1,2')).toBe('negatives not allowed: -1');
+	expect(Add('-1,-2,3')).toBe('negatives not allowed: -1,-2');
+  })
 })
