@@ -1,5 +1,5 @@
 const greetPeople = (people) => {
-  if (!Array.isArray(people)) return "Invalid input";
+  if (!Array.isArray(people)) return "Invalid input"; 
   if (people.length === 0) return "Invalid input";
 
   const validWords = people.filter((word) => typeof word === "string");

@@ -8,27 +8,36 @@ const getSecondThird = require("./get-second-third");
 
 describe("Get the second and third smallest numbers in array", () => {
   it("Not an array return a message", () => {
+    // Arrange
     const array = "Not an array";
 
+    // Act
     const output = getSecondThird(array);
 
+    // Expect
     expect(output).toEqual("Not an array");
   });
 
   it("empty array return a mesage", () => {
+    // Arrange
     const array = [];
 
+    // Act
     const output = getSecondThird(array);
 
+    // Expect
     expect(output).toEqual("Empty array");
   });
 
   it("Every parameter will not a number is ignored", () => {
+    // Arrange
     const array = [4, 10, 32, 9, 21, {}, "string", true, null, undefined, NaN];
     const expected = [9, 10];
 
+    // Act
     const output = getSecondThird(array);
 
+    // Expect
     expect(output).toEqual(expected);
   });
 

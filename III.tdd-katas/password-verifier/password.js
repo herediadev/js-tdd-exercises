@@ -10,12 +10,10 @@ const regex = /^(?=.{1,}[a-z])(?=.{1,}[A-Z])(?=.{1,}([£$%^&*@~])).{8,20}$/;
 class Password {
   constructor(password) {
     this.password = password;
-    this.isValid = this.isValid.bind(this);
-    this.isValid();
-    this.isWeak = this.isWeak.bind(this);
-    this.isWeak();
+    this.isValid = this.isValid();
   }
 
+  // methods
   isValid() {
     this.isValid = regex.test(this.password);
     return this.isValid;

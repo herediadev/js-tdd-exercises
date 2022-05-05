@@ -6,6 +6,7 @@ const getRepos = function(url) {
     .then((response) => {
       return response.map((rep) => rep.name);
     }).catch((error) => {
+      // console.log(error);
       throw error;
     }
   );

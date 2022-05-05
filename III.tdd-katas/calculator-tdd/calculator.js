@@ -22,4 +22,4 @@ const Add = (numbers, delimiter = ',') => {
 
 module.exports = { 
  Add
-}
+} 

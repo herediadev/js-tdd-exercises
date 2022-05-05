@@ -2,19 +2,25 @@ const { numbersGreaterThan10 } = require("./numbersGreaterThan10");
 
 describe("Get numbers more than 10", () => {
   it("empty array return a mesage", () => {
+    // Arrange
     const array = [];
 
+    // Act
     const output = numbersGreaterThan10(array);
 
+    // Expect
     expect(output).toEqual("Empty array");
   });
 
   it("Every parameter will not a number is ignored", () => {
+    // Arrange
     const array = [4, 10, 32, 9, 21, {}, "string", true, null, undefined, NaN];
     const expected = [32, 21];
 
+    // Act
     const output = numbersGreaterThan10(array);
 
+    // Expect
     expect(output).toEqual(expected);
   });
 

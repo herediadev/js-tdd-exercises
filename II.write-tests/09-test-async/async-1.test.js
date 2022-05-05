@@ -26,11 +26,13 @@ describe("The getRepos function will fetch all the repository names from a url l
   test("Simulating a 404 error case, this should throw an error with its respective error.status === 404", () => {
     // arrange
     const url = "https://api.github.com/users/kabaros/repos";
-    fetch.mockResolvedValueOnce({
-      json: () => Promise.reject({
+    // mock rejected
+    fetch.mockRejectedValueOnce({
+      // json: () => Promise.reject({
         status: 404,
-      }),
+      // }),
     });
+
 
     // act
     return getRepos(url).catch(

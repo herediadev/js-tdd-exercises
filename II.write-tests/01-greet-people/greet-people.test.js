@@ -1,6 +1,7 @@
 const { greetPeople } = require("./greet-people");
 
 describe("Given an array of string names, should be return an array with a 'Hello NAME' .", () => {
+  
   it("Should return 'Invalid input' if input is not an array or a invalid value", () => {
     
     // Arrange
@@ -13,6 +14,8 @@ describe("Given an array of string names, should be return an array with a 'Hell
     // Assert
     expect(output).toEqual(expectedOutput);
   });
+
+  // empty entry 
 
   it("Should greet how 'Hello + name', for ['Irina', 'Ashleigh', 'Etza'], ['Hello Irina', 'Hello Ashleigh', 'Hello Etza']", () => {
     // Arrange
