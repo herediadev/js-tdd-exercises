@@ -15,8 +15,7 @@ class Password {
 
   // methods
   isValid() {
-    this.isValid = regex.test(this.password);
-    return this.isValid;
+    return regex.test(this.password);
   }
 }
 
