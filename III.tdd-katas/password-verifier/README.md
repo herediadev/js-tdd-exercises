@@ -1,10 +1,9 @@
-Source: http://osherove.com/tdd-kata-3-refactoring/
+Source: http://sosherove.com/tdd-kata-3-refactoring/
 TDD Kata 3
 --------------------------------------------------------------------------
 Create a Password verifications class called “PasswordVerifier”.
 
 1. Add the following verifications to a master function called “Verify()”
-
    1. - password should be larger than 8 chars
    2. - password should not be null
    3. - password should have one uppercase letter at least
