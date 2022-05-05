@@ -2,9 +2,17 @@ const { Password } = require('./password');
 
 describe('Password', () => {
   it('is valid?', () => {
-    const password = new Password('12345678');
     const password2 = new Password('Aa23@aaaB');
-    expect(password.isValid).toBe(false);
     expect(password2.isValid).toBe(true);
+  })
+
+  it('No have lower case?', () => {
+    const password2 = new Password('AAAABB23@B');
+    expect(password2.isValid).toBe('Password must contain at least one lower case letter');
+  })
+
+  it('3 conditions?', () => {
+    const password2 = new Password('AAaa');
+    expect(password2.isValid).toBe('Password must contain at least 3 of the following: lower case letter, upper case letter, special character');
   })
 })
