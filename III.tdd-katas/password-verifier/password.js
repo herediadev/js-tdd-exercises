@@ -14,7 +14,7 @@ class Password {
 
   // methods
   isValid() {    
-    if(typeof this.password !== 'string') return 'Invalid input';
+    if (typeof this.password !== 'string') return 'Invalid input';
     if (this.password.length <= 0) return 'Empty password'; 
 
     const regexMin1LowerCase = /^(?=.{1,}[a-z])/;
@@ -36,12 +36,10 @@ class Password {
           count++;
         }
       })
-      // console.log('el contador de condiciones es:', count);
+
       return count >= 3;
     }
-
-    // console.log('tiene minimo 1 letra minuscula?', regexMin1LowerCase.test(this.password));
-    // console.log('cumple 3 condiciones?', min3Conditions(this.password));
+    
     if (!regexMin1LowerCase.test(this.password)) return 'Password must contain at least one lower case letter';
     if(!min3Conditions(this.password)) return 'Password must contain at least 3 of the following: lower case letter, upper case letter, special character';;
 
