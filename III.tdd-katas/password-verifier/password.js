@@ -11,11 +11,10 @@ class Password {
     this.password = password;
     this.isValid = this.isValid();
   }
-
   // methods
   isValid() {    
-    if (typeof this.password !== 'string') return 'Invalid input';
-    if (this.password.length <= 0) return 'Empty password'; 
+    if (typeof this.password !== 'string') return false;
+    if (this.password.length <= 0) return false; 
 
     const regexMin1LowerCase = /^(?=.{1,}[a-z])/;
     const regexMin1UpperCase = /^(?=.{1,}[A-Z])/;
@@ -31,17 +30,18 @@ class Password {
    
     const min3Conditions = (password) => {
       let count = 0;
+
       conditions.forEach(condition => {
         if (condition.test(password)) {
           count++;
         }
       })
-
+      
       return count >= 3;
     }
     
-    if (!regexMin1LowerCase.test(this.password)) return 'Password must contain at least one lower case letter';
-    if(!min3Conditions(this.password)) return 'Password must contain at least 3 of the following: lower case letter, upper case letter, special character';;
+    if (!regexMin1LowerCase.test(this.password)) return false;
+    if(!min3Conditions(this.password)) return false;
 
     return true;
   }
