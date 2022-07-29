@@ -1,16 +1,22 @@
-const {findWordsIndex} = require("./find-needle");
+const { findWordsIndex } = require("./find-needle");
 describe("find word index in function", () => {
-  it("Find the needle", () => {
+  it("given the input ['house', 'train', 'slide', 'needle', 'book'] Find the index of the word needle", () => {
+    //arrange
     const words = ["house", "train", "slide", "needle", "book"];
     const expected = 3;
+    //act
     const output = findWordsIndex(words, "needle");
-  expect(output).toEqual(expected);
+    //assert
+    expect(output).toEqual(expected);
   });
-  
-  it("Find the plant", () => {
+
+  it("given the input ['plant', 'shelf', 'arrow', 'bird'] Find the index of the word needle", () => {
+    //arrange
     const words = ["plant", "shelf", "arrow", "bird"];
     const expected = 0;
+    //act
     const output = findWordsIndex(words, "plant");
-  expect(output).toEqual(expected);
+    //assert
+    expect(output).toEqual(expected);
   });
 });
