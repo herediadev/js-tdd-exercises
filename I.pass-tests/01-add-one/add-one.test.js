@@ -19,6 +19,15 @@ describe("add-one function", () => {
     expect(myArray).toEqual(unchanged);
   });
 
+  it("given the input [], should return []", () => {
+    //arrange
+    const input = [];
+    //act
+    const output = addOne(input);
+    //assert
+    expect(output).toEqual(input);
+  });
+
   it("given an empty input(undefined), should throw an error", () => {
     //arrange
     const input = undefined;
@@ -43,15 +52,6 @@ describe("add-one function", () => {
     expect(output).toThrow(Error);
   });
 
-  it("given the input [], should return []", () => {
-    //arrange
-    const input = [];
-    //act
-    const output = addOne(input);
-    //assert
-    expect(output).toEqual(input);
-  });
-
   it("given the input [true, true, true], should throw an error", () => {
     //arrange
     const input = [true, true, true];
@@ -59,5 +59,31 @@ describe("add-one function", () => {
     //act and assert
     expect(output).toThrow(Error);
   });
+
+  it("given the input [null, null, null], should throw an error", () => {
+    //arrange
+    const input = [null, null, null];
+    const output = () => addOne(input);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
+  it("given the input ['hola', 'frutilla', 'null'], should throw an error", () => {
+    //arrange
+    const input = ["hola", "frutilla", "null"];
+    const output = () => addOne(input);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
+
+  it("given the input ['hola', null, 1], should throw an error", () => {
+    //arrange
+    const input = ["hola", null, 1];
+    const output = () => addOne(input);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
 })
 
