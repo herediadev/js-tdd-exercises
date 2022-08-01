@@ -1,3 +1,8 @@
-const findWordsIndex = (words, word) => words.indexOf(word);
+const findWordsIndex = (words, word) => {
+    if (!Array.isArray(words)) {
+        throw new Error("¿Ocurrió un error")
+    }
+    return words.indexOf(word);
+}
 
-module.exports = {findWordsIndex};
+module.exports = { findWordsIndex };

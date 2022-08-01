@@ -19,4 +19,13 @@ describe("find word index in function", () => {
     //assert
     expect(output).toEqual(expected);
   });
+
+  it("given the input null, should throw an error", () => {
+    //arrange
+    const words = null;
+    const output = () => findWordsIndex(words);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
 });
