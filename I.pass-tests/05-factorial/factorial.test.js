@@ -2,6 +2,7 @@ const { factorial } = require("./factorial");
 
 describe("Factorial function", () => {
   it("Given the input, example: the number 5, should return the number 120", () => {
+    //arrange
     const in1 = 5;
     const exp1 = 120;
 
@@ -16,13 +17,13 @@ describe("Factorial function", () => {
 
     const in5 = 3;
     const exp5 = 6;
-
+    //act
     const out1 = factorial(in1);
     const out2 = factorial(in2);
     const out3 = factorial(in3);
     const out4 = factorial(in4);
     const out5 = factorial(in5);
-
+    //asserts
     expect(out1).toEqual(exp1);
     expect(out2).toEqual(exp2);
     expect(out3).toEqual(exp3);

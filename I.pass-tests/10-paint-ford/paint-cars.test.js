@@ -1,29 +1,46 @@
-var paintShop = require("./paint-cars");
+const { paintShop } = require("./paint-cars");
 
-test("Paint shop", function() {
-  var cars = [
-    { make: "Ford", model: "Fiesta", colour: "Red" },
-    { make: "Land Rover", model: "Defender", colour: "Muddy" },
-    { make: "Toyota", model: "Prius", colour: "Silver" },
-    { make: "Honda", model: "Civic", colour: "Yellow" }
-  ];
+describe("Paint shop function", () => {
+  it('Given the object{ make: "Ford", model: "Fiesta", colour: "Red" }, should return a new value for colours{ make: "Ford", model: "Fiesta", colour: "Pink" } ', () => {
+    //arrange
+    const cars = [
+      { make: "Ford", model: "Fiesta", colour: "Red" },
+      { make: "Land Rover", model: "Defender", colour: "Muddy" },
+      { make: "Toyota", model: "Prius", colour: "Silver" },
+      { make: "Honda", model: "Civic", colour: "Yellow" }
+    ];
 
-  var unpaintedCars = [
-    { make: "Ford", model: "Fiesta", colour: "Red" },
-    { make: "Land Rover", model: "Defender", colour: "Muddy" },
-    { make: "Toyota", model: "Prius", colour: "Silver" },
-    { make: "Honda", model: "Civic", colour: "Yellow" }
-  ];
+    const repaintedCars = [
+      { make: "Ford", model: "Fiesta", colour: "Pink" },
+      { make: "Land Rover", model: "Defender", colour: "Muddy" },
+      { make: "Toyota", model: "Prius", colour: "Silver" },
+      { make: "Honda", model: "Civic", colour: "Yellow" }
+    ];
+    //act
+    const output = paintShop(cars, "Pink");
+    //assert
+    expect(output).toEqual(repaintedCars);
 
-  var repaintedCars = [
-    { make: "Ford", model: "Fiesta", colour: "Pink" },
-    { make: "Land Rover", model: "Defender", colour: "Muddy" },
-    { make: "Toyota", model: "Prius", colour: "Silver" },
-    { make: "Honda", model: "Civic", colour: "Yellow" }
-  ];
+  });
 
-  var output = paintShop(cars, "Pink");
+  it('Given the object   { make: "Ford", model: "Fiesta", colour: "Red" },{ make: "Land Rover", model: "Defender", colour: "Muddy" },{ make: "Toyota", model: "Prius", colour: "Silver" },{ make: "Honda", model: "Civic", colour: "Yellow" }, should return should return the same', () => {
+    //arrange
+    const cars = [
+      { make: "Ford", model: "Fiesta", colour: "Red" },
+      { make: "Land Rover", model: "Defender", colour: "Muddy" },
+      { make: "Toyota", model: "Prius", colour: "Silver" },
+      { make: "Honda", model: "Civic", colour: "Yellow" }
+    ];
 
-  expect(output).toEqual(repaintedCars);
-  expect(cars).toEqual(unpaintedCars);
+    const unpaintedCars = [
+      { make: "Ford", model: "Fiesta", colour: "Red" },
+      { make: "Land Rover", model: "Defender", colour: "Muddy" },
+      { make: "Toyota", model: "Prius", colour: "Silver" },
+      { make: "Honda", model: "Civic", colour: "Yellow" }
+    ];
+
+    //act and assert
+    expect(cars).toEqual(unpaintedCars);
+  });
+
 });

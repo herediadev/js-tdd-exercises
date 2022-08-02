@@ -41,7 +41,21 @@ describe("Car-sales function", () => {
     expect(output).toThrow(Error);
   });
 
+  it("given the object, should throw an error", () => {
+    //arrange
+    const input = {};
+    const output = () => sales(input);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
+  it("given the object { make: 'Ford, model: 'Fiesta', colour: 'Red', price: 5999 }, should throw an error", () => {
+    //arrange
+    const input = { make: "Ford", model: "Fiesta", colour: "Red", price: 5999 };
+    const output = () => sales(input);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
 });
 
-//recorrer el objeto, filtrar por marcas, y sumar los precios total de cada marca
-//retornar un nuevo objeto con key marca y value el monto total

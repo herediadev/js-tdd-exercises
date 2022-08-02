@@ -49,5 +49,3 @@ describe("Second largest function", () => {
     expect(output).toThrow(Error);
   });
 })
-
-// como encontrar error de último numero???

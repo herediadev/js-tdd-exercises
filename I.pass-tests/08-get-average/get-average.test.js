@@ -1,7 +1,7 @@
 const { average } = require("./get-average");
 
 describe("get-Average function", () => {
-  it("Given the array [4, " - ", 8, 11, 'hello', '57', 0, 2], should return average of all numbers", () => {
+  it("Given the array [4, " - ", 8, 11, 'hello', '57', 0, 2], should return average 5", () => {
     //arrange
     const numbers = [4, "-", 8, 11, "hello", "57", 0, 2];
     const expected = 5;
@@ -46,6 +46,3 @@ describe("get-Average function", () => {
   });
 
 });
-
-
-// metodo every para seleccionar solo strings? lenght del array, reduce del array divido por el length
