@@ -21,9 +21,34 @@ describe("Cities function", () => {
 
     //act
     const result = formatCities(capitals, transform);
-    
+
     //assert
     expect(result).toEqual(expected);
   });
+
+  it("given the input null, should throw an error", () => {
+    //arrange
+    const input = null;
+    const output = () => formatCities(input);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
+  it("given the object, should throw an error", () => {
+    //arrange
+    const input = {};
+    const output = () => formatCities(input);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
+  it('given the object { city: "Paris", country: "France" }, should throw an error', () => {
+    //arrange
+    const input =  { city: "Paris", country: "France" };
+    const output = () => formatCities(input);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
 
 });

@@ -43,4 +43,29 @@ describe("Paint shop function", () => {
     expect(cars).toEqual(unpaintedCars);
   });
 
+
+  it("given the input null, should throw an error", () => {
+    //arrange
+    const input = null;
+    const output = () => paintShop(input);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
+  it("given the object, should throw an error", () => {
+    //arrange
+    const input = {};
+    const output = () => paintShop(input);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
+  it("given the object { make: 'Ford, model: 'Fiesta', colour: 'Red' }, should throw an error", () => {
+    //arrange
+    const input =  { make: "Ford", model: "Fiesta", colour: "Red" };
+    const output = () => paintShop(input);
+    //act and assert
+    expect(output).toThrow(Error);
+  });
+
 });
