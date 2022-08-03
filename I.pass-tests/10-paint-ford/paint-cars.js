@@ -6,9 +6,15 @@ const paintShop = (cars, newColorCar) => {
     if (!isObject) {
         throw new Error("¿Ocurrió un error");
     }
-        /*    const newArray = Array.from(cars); */
+    let newColor = "debe seleccionar el color";
+    if (!newColorCar) {
+        return newColor = "Debe seleccionar el color";
+    }
+    /*    const newArray = Array.from(cars); */
+    /*   let newArrayCars = cars.map((x) => x); */
     const newArrayCars = JSON.parse(JSON.stringify(cars));
     newArrayCars[0].colour = newColorCar;
+    
     return newArrayCars;
 };
 

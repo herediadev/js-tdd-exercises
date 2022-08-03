@@ -9,7 +9,6 @@ describe("Paint shop function", () => {
       { make: "Toyota", model: "Prius", colour: "Silver" },
       { make: "Honda", model: "Civic", colour: "Yellow" }
     ];
-
     const repaintedCars = [
       { make: "Ford", model: "Fiesta", colour: "Pink" },
       { make: "Land Rover", model: "Defender", colour: "Muddy" },
@@ -23,7 +22,7 @@ describe("Paint shop function", () => {
 
   });
 
-  it('Given the object   { make: "Ford", model: "Fiesta", colour: "Red" },{ make: "Land Rover", model: "Defender", colour: "Muddy" },{ make: "Toyota", model: "Prius", colour: "Silver" },{ make: "Honda", model: "Civic", colour: "Yellow" }, should return should return the same', () => {
+  it('Given the object { make: "Ford", model: "Fiesta", colour: "Red" },{ make: "Land Rover", model: "Defender", colour: "Muddy" },{ make: "Toyota", model: "Prius", colour: "Silver" },{ make: "Honda", model: "Civic", colour: "Yellow" }, should return should return the same', () => {
     //arrange
     const cars = [
       { make: "Ford", model: "Fiesta", colour: "Red" },
@@ -38,9 +37,23 @@ describe("Paint shop function", () => {
       { make: "Toyota", model: "Prius", colour: "Silver" },
       { make: "Honda", model: "Civic", colour: "Yellow" }
     ];
-
     //act and assert
     expect(cars).toEqual(unpaintedCars);
+  });
+
+  it('Given the array [{ make: "Ford", model: "Fiesta", colour: "Red" },{ make: "Land Rover", model: "Defender", colour: "Muddy" },{ make: "Toyota", model: "Prius", colour: "Silver" },{ make: "Honda", model: "Civic", colour: "Yellow" }], should return a text "Debe seleccionar el color"', () => {
+    //arrange
+    const cars = [
+      { make: "Ford", model: "Fiesta", colour: "Red" },
+      { make: "Land Rover", model: "Defender", colour: "Muddy" },
+      { make: "Toyota", model: "Prius", colour: "Silver" },
+      { make: "Honda", model: "Civic", colour: "Yellow" }
+    ];
+    const expected = "Debe seleccionar el color";
+    //act
+    const output = paintShop(cars);
+    //assert
+    expect(output).toEqual(expected);
   });
 
 
@@ -62,7 +75,7 @@ describe("Paint shop function", () => {
 
   it("given the object { make: 'Ford, model: 'Fiesta', colour: 'Red' }, should throw an error", () => {
     //arrange
-    const input =  { make: "Ford", model: "Fiesta", colour: "Red" };
+    const input = { make: "Ford", model: "Fiesta", colour: "Red" };
     const output = () => paintShop(input);
     //act and assert
     expect(output).toThrow(Error);
