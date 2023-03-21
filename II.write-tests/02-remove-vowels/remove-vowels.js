@@ -1,26 +1,14 @@
-function removeVowels(word) {
-  var characters = word.split("");
+export const removeVowels = (word) => {
+  if(word === null || Number.isNaN(word)) throw new Error('Invalid params', {cause: {statusError: 1}})
+  if(typeof word === 'object' || word === true || word === false) throw new Error('Invalid params', {cause: {statusError: 2}})
 
-  var result = [];
+  if(typeof word!== 'string'){
+    return ''
+  }
+  const wordTransformed = word.replace(/[aeiou]/gi, '')
 
-  characters.forEach(function(character) {
-    if (
-      character === "a" ||
-      character === "o" ||
-      character === "i" ||
-      character === "e" ||
-      character === "u"
-    ) {
-      result.push(character);
-    } else {
-      result.push("_");
-    }
-  });
-
-  return result.join("");
+  return wordTransformed;
 }
-
-module.exports = removeVowels;
 
 /*
   Let's trace this piece of code - what is the value of result with this input

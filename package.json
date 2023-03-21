@@ -4,15 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "test": "vitest --ui"
+    "test": "vitest"
   },
   "devDependencies": {
     "vite": "^4.1.0",
-    "coverage": "vitest run --coverage"
+    "vitest": "^0.29.2"
   },
   "dependencies": {
     "jest": "^22.4.3",
-    "vitest": "^0.29.2"
+    "node-fetch": "^3.3.1"
   },
   "jest": {
     "testURL": "http://localhost/"

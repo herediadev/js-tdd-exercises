@@ -1,16 +1,20 @@
-var removeVowels = require("../02-remove-vowels/remove-vowels");
+import {removeVowels} from "../02-remove-vowels/remove-vowels";
 
-function removeVowelsForWords(words) {
-  var result = words.map(function(word) {
-    return removeVowels(word);
+export const removeVowelsForWords = (words) => {
+  if(words === null || Number.isNaN(words)) throw new Error('Invalid params', {cause: {statusError: 1}})
+  if(!Array.isArray(words)) throw new Error('Invalid params', {cause: {statusError: 2}})
+  
+  let result = []
+  result = words.map(function(word) {
+    if(typeof word === 'string'){
+      return removeVowels(word)
+    }
   });
 
-  return result;
+  const validStrings = result.filter((str) => {
+    return typeof str === "string" && str.length > 0
+  });
+  
+  return validStrings;
 }
 
-module.exports = removeVowelsForWords;
-
-/*
-    input: ["Irina", "Etza", "Daniel"]
-    expected output: ["rn", "tz", "Dnl"]
-*/

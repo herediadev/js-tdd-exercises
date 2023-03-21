@@ -1,6 +1,6 @@
-const fetch = require("node-fetch");
+import fetch from 'node-fetch';
 
-const getRepos = function(repoName) {
+export const getRepos = (repoName) => {
   return fetch(repoName)
     .then(data => data.json())
     .then(function(response) {
@@ -10,4 +10,3 @@ const getRepos = function(repoName) {
     });
 };
 
-module.exports = getRepos;

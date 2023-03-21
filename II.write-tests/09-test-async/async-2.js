@@ -1,11 +1,8 @@
-const fetcher = require("./fetcher");
+import { fetcher } from "./fetcher";
 
-const getRepos = function(repoName) {
-  return fetcher(repoName).then(function(response) {
-    return response.map(function(rep) {
-      return rep.name;
-    });
+export const getRepos = async repoName => {
+  const response = await fetcher(repoName);
+  return response.map(function (rep) {
+    return rep.name;
   });
 };
-
-module.exports = getRepos;
