@@ -1,26 +1,18 @@
 {
-  "name": "js-tdd-exercises",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "vitest_poc",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "jest"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "node-fetch": "^2.1.2"
+    "test": "vitest"
   },
   "devDependencies": {
-    "jest": "^22.4.3"
+    "vite": "^4.1.0",
+    "vitest": "^0.29.2"
   },
-  "coverageThreshold": {
-    "global": {
-      "branches": 80,
-      "functions": 80,
-      "lines": 80,
-      "statements": -10
-    }
+  "dependencies": {
+    "jest": "^22.4.3",
+    "node-fetch": "^3.3.1"
   },
   "jest": {
     "testURL": "http://localhost/"
