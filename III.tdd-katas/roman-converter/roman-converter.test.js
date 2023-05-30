@@ -252,4 +252,281 @@ describe("convertToOldRoman function", () => {
         //Assert
         expect(result).toBe(expected);
     })
+
+    it("For the 35 it will return XXXV", () => {
+        //Arrange
+        const number = 35;
+        const expected = "XXXV";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    })
+
+    it("For the 40 it will return XXXX", () => {
+        //Arrange
+        const number = 40;
+        const expected = "XXXX";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 49 it will return XXXXVIII", () => {
+        //Arrange
+        const number = 49;
+        const expected = "XXXXVIIII";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 50 it will return L", () => {
+        //Arrange
+        const number = 50;
+        const expected = "L";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 54 it will return LIIII", () => {
+        //Arrange
+        const number = 54;
+        const expected = "LIIII";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 55 it will return LV", () => {
+        //Arrange
+        const number = 55;
+        const expected = "LV";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 59 it will return LVIIII", () => {
+        //Arrange
+        const number = 59;
+        const expected = "LVIIII";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 60 it will return LX", () => {
+        //Arrange
+        const number = 60;
+        const expected = "LX";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 61 it will return LXI", () => {
+        //Arrange
+        const number = 61;
+        const expected = "LXI";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 65 it will return LXV", () => {
+        //Arrange
+        const number = 65;
+        const expected = "LXV";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 80 it will return LXXX", () => {
+        //Arrange
+        const number = 80;
+        const expected = "LXXX";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 89 it will return LXXXVIIII", () => {
+        //Arrange
+        const number = 89;
+        const expected = "LXXXVIIII";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 99 it will return LXXXVIIII", () => {
+        //Arrange
+        const number = 99;
+        const expected = "LXXXXVIIII";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 100 it will return C", () => {
+        //Arrange
+        const number = 100;
+        const expected = "C";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 299 it will return CCLXXXXVIIII", () => {
+        //Arrange
+        const number = 299;
+        const expected = "CCLXXXXVIIII";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 499 it will return CCCCLXXXXVIIII", () => {
+        //Arrange
+        const number = 499;
+        const expected = "CCCCLXXXXVIIII";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 500 it will return D", () => {
+        //Arrange
+        const number = 500;
+        const expected = "D";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 509 it will return DVIIII", () => {
+        //Arrange
+        const number = 509;
+        const expected = "DVIIII";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 549 it will return DXXXXVIIII", () => {
+        //Arrange
+        const number = 549;
+        const expected = "DXXXXVIIII";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 550 it will return DL", () => {
+        //Arrange
+        const number = 550;
+        const expected = "DL";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 999 it will return DCCCCLXXXXVIIII", () => {
+        //Arrange
+        const number = 999;
+        const expected = "DCCCCLXXXXVIIII";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 1000 it will return M", () => {
+        //Arrange
+        const number = 1000;
+        const expected = "M";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
+    it("For the 2999 it will return MMDCCCCLXXXXVIIII", () => {
+        //Arrange
+        const number = 2999;
+        const expected = "MMDCCCCLXXXXVIIII";
+
+        //Act
+        const result = convertToOldRoman(number);
+
+        //Assert
+        expect(result).toBe(expected);
+    });
+
 })
