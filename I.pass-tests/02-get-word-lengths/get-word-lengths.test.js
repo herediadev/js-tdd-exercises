@@ -1,9 +1,31 @@
-var wordLengths = require("./get-word-lengths");
+const {getWordLengths} = require("./get-word-lengths");
 
-test("Get word lengths", function() {
-  var words = ["sun", "potato", "roundabout", "pizza"];
-  var expected = [3, 6, 10, 5];
+describe("getWordLengths function. Get word lengths", () => {
+  it("for the array [sun, potato, roundabout, pizza] it will return [3, 6, 10, 5]",() => {
+    //arrange
+    const someWords = ["sun", "potato", "roundabout", "pizza"];
+    const expected = [3, 6, 10, 5];
 
-  var output = wordLengths(words);
-  expect(output).toEqual(expected);
+    //act
+    const output = getWordLengths(someWords);
+
+    //assert
+    expect(output).toEqual(expected);
+    expect(Array.isArray(someWords)).toBe(true);
+  });
+
+  it("If someWords is not an array it will throw an error",() => {
+    //arrange
+    const someWords = "potato";
+    const expected = 3;
+      
+    //act and assert
+    expect(() => getWordLengths()).toThrow("Error");
+    
+  });
+
+  it("If the function does not receive parameters, it will throw an error.", () => {
+    //act and assert
+    expect(() => getWordLengths()).toThrow("Error");
+  });
 });

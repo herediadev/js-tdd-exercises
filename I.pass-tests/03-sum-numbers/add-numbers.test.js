@@ -1,10 +1,29 @@
-var addAllnumbers = require("./add-numbers");
+const {addNumbers} = require("./add-numbers");
 
-test("Add all numbers", function() {
-  var numbers = [9, 23, 10, 3, 8];
-  var expected = 53;
+describe("addAllNumbers function. Add all numbers", () => {
+  it("for the array [9, 23, 10, 3, 8] it will return 53", () => {
+    //arrange
+    const numbers = [9, 23, 10, 3, 8];
+    const expected = 53;
 
-  var output = addAllnumbers(numbers);
+    //act
+    const output = addNumbers(numbers);
 
-  expect(output).toEqual(expected);
+    //assert
+    expect(output).toEqual(expected);
+  });
+
+  it("If numbers is not an array it will throw an error",() => {
+    //arrange
+    const numbers = 4;
+      
+    //act and assert
+    expect(() => addNumbers()).toThrow("Error");
+    
+  });
+
+  it("If the function does not receive parameters, it will throw an error.", () => {
+    //act and assert
+    expect(() => addNumbers()).toThrow("Error");
+});
 });

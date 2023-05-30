@@ -1,13 +1,15 @@
 const fetch = require("node-fetch");
 
-const getRepos = function(repoName) {
+const getRepos = (repoName) => {
   return fetch(repoName)
     .then(data => data.json())
-    .then(function(response) {
-      return response.map(function(rep) {
+    .then(response => {
+      return response.map(rep => {
         return rep.name;
       });
     });
 };
 
-module.exports = getRepos;
+module.exports = {
+  getRepos
+};

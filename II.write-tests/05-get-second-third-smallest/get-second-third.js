@@ -1,7 +1,11 @@
-module.exports = function(array) {
-  const newArray = array.slice();
-  newArray.sort(function(x, y) {
+const getSecondThird = (array) => {
+  //const newArray = array.slice();
+  array.sort((x, y) => {
     return x - y;
   });
-  return [newArray[1], newArray[2]];
+  return [array[1], array[2]];
 };
+
+module.exports = {
+  getSecondThird
+}
